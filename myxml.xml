@@ -1,22 +1,16 @@
 <EABooks Name="BooksContainer" >
 
-  <Entity Name="Livre">
-    <attribute Name="idLivre"/>
-  </Entity>
-  <Entity Name="Editeur">
-    <attribute Name="idEditeur"/>
-  </Entity>
-  <Entity Name="Auteur">
-    <attribute Name="idAuteur"/>
-  </Entity>
+  <entity Name="Livre">
+    <attribute entity="Livre" Name="idLivre"/>
+  </entity>
+  <entity Name="Editeur">
+    <attribute entity="Editeur" Name="idEditeur"/>
+  </entity>
+  <entity Name="Auteur">
+    <attribute entity="Auteur" Name="idAuteur"/>
+  </entity>
 
-  <Association Name="Publier">
-    <End Role="Livre" Entity="Livre" />
-    <End Role="Editeur" Entity="Editeur" />
-  </Association>
-  <Association Name="Ecrire">
-    <End Role="Livre" Entity="Livre" />
-    <End Role="Auteur" Entity="Auteur" />
-  </Association>
+  <association entity1="Editeur" entity2="Livre">Publier</association>
+  <association entity1="Auteur" entity2="Livre">Ecrire</association>
 
 </EABooks>  
